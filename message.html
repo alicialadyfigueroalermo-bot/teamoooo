@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💜 Carta para mi Miniña 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+background:
+radial-gradient(circle at top,
+#5a189a 0%,
+#3c096c 30%,
+#240046 60%,
+#10002b 100%);
+
+overflow:hidden;
+
+color:white;
+
+font-family:'Segoe UI',sans-serif;
+}
+
+h1{
+
+font-size:50px;
+margin-bottom:10px;
+
+text-shadow:
+0 0 10px #c77dff,
+0 0 20px #c77dff,
+0 0 40px #9d4edd;
+}
+
+.sub{
+
+margin-bottom:25px;
+color:#e9d5ff;
+}
+
+.contenedor{
+
+position:relative;
+
+width:900px;
+height:650px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.carta{
+
+position:absolute;
+
+width:800px;
+height:550px;
+
+background:#dbeafe;
+
+color:#333;
+
+padding:35px;
+
+border-radius:20px;
+
+overflow-y:auto;
+
+border:3px solid #93c5fd;
+
+box-shadow:
+0 0 25px #93c5fd,
+0 0 50px rgba(147,197,253,.4);
+
+transform:translateY(200px);
+
+opacity:0;
+
+transition:1.4s;
+
+z-index:10;
+}
+
+.carta h2{
+
+text-align:center;
+
+color:#2563eb;
+
+margin-bottom:20px;
+
+font-size:40px;
+
+font-family:'Dancing Script',cursive;
+}
+
+#texto{
+
+white-space:pre-line;
+
+line-height:1.4;
+
+font-size:22px;
+
+font-family:'Dancing Script',cursive;
+
+color:#1e3a8a;
+
+text-align:justify;
+}
+
+.sobre{
+
+position:absolute;
+
+bottom:50px;
+
+width:380px;
+height:250px;
+
+cursor:pointer;
+
+z-index:2;
+}
+
+.base{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:#9d4edd;
+
+border-radius:0 0 15px 15px;
+}
+
+.tapa{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:#c77dff;
+
+clip-path:polygon(0 0,100% 0,50% 55%);
+
+transform-origin:top;
+
+transition:1s;
+}
+
+.corazon{
+
+position:absolute;
+
+top:105px;
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:40px;
+
+z-index:5;
+}
+
+.abierto .tapa{
+
+transform:rotateX(180deg);
+}
+
+.abierto .carta{
+
+transform:translateY(-120px);
+
+opacity:1;
+}
+
+.volver{
+
+position:fixed;
+
+bottom:25px;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+border:1px solid #c77dff;
+
+transition:.3s;
+}
+
+.volver:hover{
+
+box-shadow:
+0 0 20px #c77dff,
+0 0 40px #9d4edd;
+}
+
+.flotante{
+
+position:absolute;
+
+pointer-events:none;
+
+animation:subir linear infinite;
+}
+
+@keyframes subir{
+
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>💜 Pala ti 💜</h1>
+
+<div class="sub">
+Haz clic en el sobre 💌
+</div>
+
+<div class="contenedor" id="contenedor">
+
+<div class="carta">
+
+<h2>💜 Querida Nanita 💜</h2>
+
+<div id="texto"></div>
+
+</div>
+
+<div class="sobre">
+
+<div class="base"></div>
+
+<div class="tapa"></div>
+
+<div class="corazon">💜</div>
+
+</div>
+
+</div>
+
+<a href="index.html" class="volver">
+⬅ Volver al inicio
+</a>
+
+<script>
+
+const mensaje = `
+
+te amo demasiado deverdad y quiero pedirte mucho perdon por estar lejitos de ti, por las veces que sentiste que me comporto raro o cortante, perdón por todas las cosas por las cuales capaz te hice sentir mal miniña. Yio voy a seguir mejorando cada día pala hacerte feliz miniña.
+
+Yio tu Angelito siempre estaré junto a ti aunque sea por una pantalla miniña y siempre con el gran anhelo y con unas ansias de volverte a ver y darte todo este amor contenido.
+
+Tú eles la mejor noviecita del mundo, haces tanto por mi ke diooos nunca me sentí tan amado. Y pue aunque aveces tes tite, desganada o estresada; pue yio chiempre taré ahí aunque te haga renegar JAJSJA pelo estaré ahi contigo chiempre teniendo toda la paciencia lita.
+
+Te quiero recordar miniña que tu eres una persona irreal por lo increíble que eres, tu puedes con todo lo que se te ponga en frente miniña y pue yio siempre taré para que si tu mundo se te cae pues resguardarte en el mío mientras te ayudo a reconstruir tu mundito miniña.
+
+Deverda te doy las gracias por todo todo todo tu amor, comprensión y paciencia. Te amo mucote y siempre siempre serás mi niña bonita, mi reina preciosa, mi princesita dulce, mi chikinena, mi pedaso mujeron, mi turronzito de azúcar, mi coranzito de melocotón, mia mia.
+
+Y yio chiempre seré tuyo tuyo tuyo, de tiii, de tu propiedad.
+
+Te amooo, te quieroooo y te extraño muchote deverdad. Yia quiero acabar con esta distancia miniña y poder estar juntos denuevo.
+
+El amor y el cariño que siento por ti miniña es inmedible, cada día mi amor por ti crece, crece y crece.
+
+Mi corazón late por ti y eso significa que yio vivo para amarte con todo mi corazón miniña.
+
+Felices 3 mesesitoooos.
+
+Y vamos a seguir contando hasta casarnooos miniñahermosaaa.
+
+Con muchísimo mucho muchote amorsito,
+
+Tu Angelitototot
+
+`;
+
+const contenedor =
+document.getElementById("contenedor");
+
+const texto =
+document.getElementById("texto");
+
+let iniciado=false;
+let i=0;
+
+contenedor.addEventListener("click",()=>{
+
+contenedor.classList.add("abierto");
+
+if(iniciado) return;
+
+iniciado=true;
+
+setTimeout(()=>{
+
+function escribir(){
+
+if(i<mensaje.length){
+
+texto.innerHTML+=mensaje.charAt(i);
+
+i++;
+
+setTimeout(escribir,15);
+
+}
+
+}
+
+escribir();
+
+},1300);
+
+});
+
+function crearElemento(){
+
+const simbolos=[
+"💜",
+"✨",
+"💕",
+"🌙",
+"⭐"
+];
+
+const elemento=
+document.createElement("div");
+
+elemento.classList.add("flotante");
+
+elemento.innerHTML=
+simbolos[Math.floor(Math.random()*simbolos.length)];
+
+elemento.style.left=
+Math.random()*100+"vw";
+
+elemento.style.fontSize=
+(20+Math.random()*25)+"px";
+
+elemento.style.animationDuration=
+(6+Math.random()*8)+"s";
+
+document.body.appendChild(elemento);
+
+setTimeout(()=>{
+elemento.remove();
+},14000);
+
+}
+
+setInterval(crearElemento,500);
+
+</script>
+
+</body>
+</html>

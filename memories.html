@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💜 Nuestros Recuerdos 💜</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,
+#5a189a 0%,
+#3c096c 30%,
+#240046 60%,
+#10002b 100%);
+
+min-height:100vh;
+color:white;
+padding:30px;
+}
+
+h1{
+
+text-align:center;
+margin-bottom:40px;
+
+font-size:50px;
+
+text-shadow:
+0 0 10px #c77dff,
+0 0 20px #c77dff,
+0 0 40px #9d4edd;
+}
+
+.galeria{
+
+width:90%;
+max-width:1200px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+}
+
+.foto{
+
+width:100%;
+height:300px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:2px solid rgba(199,125,255,.3);
+
+cursor:pointer;
+
+opacity:0;
+transform:scale(.7);
+
+transition:
+opacity 1s ease,
+transform 1s ease,
+box-shadow .4s;
+}
+
+.visible{
+
+opacity:1;
+transform:scale(1);
+
+animation:latido 3s infinite ease-in-out;
+}
+
+.foto:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 20px #c77dff,
+0 0 40px #9d4edd,
+0 0 60px #7b2cbf;
+}
+
+@keyframes latido{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.03);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.volver{
+
+display:block;
+
+width:max-content;
+
+margin:40px auto;
+
+padding:15px 35px;
+
+text-decoration:none;
+
+color:white;
+
+border-radius:50px;
+
+border:1px solid #c77dff;
+
+transition:.3s;
+}
+
+.volver:hover{
+
+box-shadow:
+0 0 20px #c77dff,
+0 0 40px #9d4edd;
+}
+
+@media(max-width:900px){
+
+.galeria{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.galeria{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:35px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>💜 Nuestros Recuerdos 💜</h1>
+
+<div class="galeria">
+
+<img class="foto" src="imagenes/foto1.jpg">
+<img class="foto" src="imagenes/foto2.jpg">
+<img class="foto" src="imagenes/foto3.jpg">
+
+<img class="foto" src="imagenes/foto4.jpg">
+<img class="foto" src="imagenes/foto5.jpg">
+<img class="foto" src="imagenes/foto6.jpg">
+
+<img class="foto" src="imagenes/foto7.jpg">
+<img class="foto" src="imagenes/foto8.jpg">
+<img class="foto" src="imagenes/foto9.jpg">
+
+</div>
+
+<a class="volver" href="index.html">
+⬅ Volver al inicio
+</a>
+
+<script>
+
+window.onload = function(){
+
+const fotos = document.querySelectorAll(".foto");
+
+fotos.forEach((foto, i) => {
+
+setTimeout(() => {
+
+foto.classList.add("visible");
+
+}, i * 300);
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

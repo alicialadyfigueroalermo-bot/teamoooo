@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💜 Para Mi Amochito bello 💜</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:
+radial-gradient(circle at top,
+#5a189a 0%,
+#3c096c 30%,
+#240046 60%,
+#10002b 100%);
+overflow:hidden;
+color:white;
+}
+
+nav{
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:25px;
+
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(199,125,255,.3);
+}
+
+nav a{
+text-decoration:none;
+color:#f3e8ff;
+font-size:18px;
+transition:.3s;
+}
+
+nav a:hover{
+color:white;
+
+text-shadow:
+0 0 10px #c77dff,
+0 0 20px #c77dff,
+0 0 40px #c77dff;
+}
+
+.hero{
+height:85vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+h1{
+font-size:85px;
+
+color:white;
+
+text-shadow:
+0 0 10px #c77dff,
+0 0 20px #c77dff,
+0 0 40px #9d4edd,
+0 0 80px #7b2cbf;
+}
+
+.sub{
+max-width:850px;
+
+font-size:24px;
+
+line-height:1.9;
+
+margin-top:25px;
+
+color:#f3e8ff;
+}
+
+.boton{
+margin-top:40px;
+
+padding:18px 40px;
+
+border-radius:50px;
+
+border:none;
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(10px);
+
+border:1px solid #c77dff;
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 0 15px #7b2cbf,
+0 0 30px #7b2cbf;
+}
+
+.boton:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 20px #c77dff,
+0 0 40px #c77dff,
+0 0 80px #9d4edd;
+}
+
+.glow{
+position:absolute;
+
+width:350px;
+height:350px;
+
+background:#7b2cbf;
+
+border-radius:50%;
+
+filter:blur(160px);
+
+opacity:.35;
+}
+
+.glow1{
+top:-120px;
+left:-120px;
+}
+
+.glow2{
+bottom:-120px;
+right:-120px;
+}
+
+.flotante{
+position:absolute;
+pointer-events:none;
+animation:caer linear infinite;
+}
+
+@keyframes caer{
+
+from{
+transform:translateY(-100px);
+opacity:1;
+}
+
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+.frase{
+margin-top:20px;
+font-size:18px;
+color:#d8b4fe;
+letter-spacing:2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+<a href="memories.html">Recuerdos</a>
+<a href="gallery.html">Galería</a>
+<a href="message.html">Carta</a>
+<a href="reasons.html">100 Razones</a>
+
+</nav>
+
+<div class="hero">
+
+<div class="frase">
+✨ FELICES 3 MESES ✨
+</div>
+
+<h1>
+💜 Oda Miniña hermosa 💜
+</h1>
+
+<p class="sub">
+
+Esto lo cree pala ti miniña.
+
+Aquí guardé nuestros recuerditos,
+momentos hermosoooos,
+palabritas que salen del fondo de mi corazóncito
+y muchas razones por las cuales te amoooooo demasiadoo.
+
+Quielo que cada que entres aquí miniña recuerdes lo muchooooo ke significas pala mi.
+
+💜 Glacias por etos maravillosos 3 mesesitooos. 💜
+
+</p>
+
+<button
+class="boton"
+onclick="window.location.href='memories.html'">
+
+Entrar 💜
+
+</button>
+
+</div>
+
+<script>
+
+function crearElemento(){
+
+const simbolos=[
+"💜",
+"✨",
+"⭐",
+"🌙",
+"💕",
+"💟"
+];
+
+const elemento=document.createElement("div");
+
+elemento.classList.add("flotante");
+
+elemento.innerHTML=
+simbolos[Math.floor(Math.random()*simbolos.length)];
+
+elemento.style.left=
+Math.random()*100+"vw";
+
+elemento.style.fontSize=
+(20+Math.random()*40)+"px";
+
+elemento.style.animationDuration=
+(6+Math.random()*8)+"s";
+
+document.body.appendChild(elemento);
+
+setTimeout(()=>{
+elemento.remove();
+},14000);
+
+}
+
+setInterval(crearElemento,250);
+
+</script>
+
+</body>
+</html>
